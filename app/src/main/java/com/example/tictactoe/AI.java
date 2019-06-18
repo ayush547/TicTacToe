@@ -13,6 +13,10 @@ public class AI {
     SharedPreferences sharedPreferences;
     int difficulty;
 
+    public int getDifficulty() {
+        return difficulty;
+    }
+
     public AI(Context context){
         board = new Board();
         validX = new Vector<Integer>();

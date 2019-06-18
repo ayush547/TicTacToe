@@ -50,6 +50,34 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@id/radio"
         android:layout_marginTop="48dp"
+        android:id="@+id/save"
         android:onClick="save"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hall Of Fame"
+        android:layout_below="@id/save"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:id="@+id/HOF"
+        android:onClick="bestTimes"/>
+     <Button
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_centerHorizontal="true"
+         android:layout_below="@id/HOF"
+         android:layout_marginTop="4dp"
+         android:text="Clear Database"
+         android:onClick="clearData"
+         android:id="@+id/clear"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:layout_centerHorizontal="true"
+        android:onClick="mainMenu"
+        android:layout_marginTop="8dp"
+        android:layout_below="@id/clear"/>
 
 </RelativeLayout>

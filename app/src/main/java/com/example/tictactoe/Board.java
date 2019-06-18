@@ -49,10 +49,6 @@ public class Board {
         return board[r][c];
     }
 
-    public void setInitialTurn(int initialTurn) {  //1 represents player and -1 for comp
-        this.initialTurn = initialTurn;
-    }
-
     private void flipturn(){
         turn*=-1;
     }

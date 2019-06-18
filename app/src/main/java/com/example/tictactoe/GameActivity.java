@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Chronometer;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
@@ -16,6 +17,9 @@ public class GameActivity extends Activity {
     ImageButton grid00,grid01,grid02,grid10,grid11,grid12,grid20,grid21,grid22;
     ImageView playerTurn;
     MediaPlayer playSound,undoSound,resetSound;
+    Chronometer chronometer;
+    long startTime;
+    DatabaseManager myDb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +27,7 @@ public class GameActivity extends Activity {
         setContentView(R.layout.activity_game);
         board = new Board();
         computer = new AI(getApplicationContext());
+        myDb = new DatabaseManager(getApplication());
         grid00 = findViewById(R.id.block_00);
         grid01 = findViewById(R.id.block_01);
         grid02 = findViewById(R.id.block_02);
@@ -38,6 +43,9 @@ public class GameActivity extends Activity {
         resetSound = MediaPlayer.create(this,R.raw.reset);
         Intent in = getIntent();
         AIPlayer = (in.getIntExtra("AIPlayer",0)==1?true:false);
+        startTime = System.currentTimeMillis();
+        chronometer = findViewById(R.id.chronometer);
+        chronometer.start();
     }
 
     public void player(View view) {
@@ -76,7 +84,7 @@ public class GameActivity extends Activity {
         if(board.winner()!=0){
             outToWinner();
         }
-        if(AIPlayer == true && board.getTurn()==-1) {
+        if(AIPlayer == true && board.getTurn()==-1) { //single player mode and comp's turn
             computer.setBoard(board);
             if (board.winner() == 0) {  //no body has won and moves exist
                 int arr[] = computer.getMove();
@@ -90,6 +98,11 @@ public class GameActivity extends Activity {
     }
 
     private void outToWinner() {
+        chronometer.stop();
+        if(AIPlayer==true) {
+            if(board.winner()==-1)
+                myDb.writeData(computer.getDifficulty(),System.currentTimeMillis() - startTime);
+        }
         Intent outWinner = new Intent(GameActivity.this, WinnerActivity.class);
         outWinner.putExtra("winner",board.winner());  //board.winner returns -1 for comp and 1 for player and 2 for draw
         outWinner.putExtra("AIPlayer",(AIPlayer?1:0));

@@ -9,17 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AdminPanel"></activity>
-        <activity android:name=".MainMenu">
+        <activity android:name=".HallOfFame"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".AdminPanel"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MainMenu"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".WinnerActivity" />
-        <activity android:name=".GameActivity"></activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".WinnerActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".GameActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
