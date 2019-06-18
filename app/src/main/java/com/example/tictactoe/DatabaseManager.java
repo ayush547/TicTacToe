@@ -55,5 +55,8 @@ public class DatabaseManager extends SQLiteOpenHelper {
         db.execSQL("delete from easy");
         db.execSQL("delete from medium");
         db.execSQL("delete from hard");
+        db.execSQL("drop table easy");
+        db.execSQL("drop table medium");
+        db.execSQL("drop table hard");
     }
 }

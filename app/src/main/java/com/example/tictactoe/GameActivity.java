@@ -100,7 +100,6 @@ public class GameActivity extends Activity {
     private void outToWinner() {
         chronometer.stop();
         if(AIPlayer==true) {
-            if(board.winner()==-1)
                 myDb.writeData(computer.getDifficulty(),System.currentTimeMillis() - startTime);
         }
         Intent outWinner = new Intent(GameActivity.this, WinnerActivity.class);
