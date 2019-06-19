@@ -45,7 +45,7 @@ public class AI {
         for(int i=0;i<3;i++) {
             for (int j = 0; j < 3; j++) {
                 if (board.play(i, j) == true) {
-                    value.add(minimax(board, 0, true));
+                    value.add(minimax(board, 0, false));
                     x.add(i);
                     y.add(j);
                     board.undo();
