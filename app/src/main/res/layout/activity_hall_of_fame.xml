@@ -8,11 +8,21 @@
     tools:context=".HallOfFame">
 
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Easy Mode Scores"
+        android:textSize="24sp"/>
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:id="@+id/easy"
         android:textAlignment="center"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Medium Mode Scores"
+        android:textSize="24sp"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -20,10 +30,14 @@
         android:textAlignment="center"
         android:id="@+id/medium"/>
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hard Mode Scores"
+        android:textSize="24sp"/>
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:textAlignment="center"
         android:id="@+id/hard"/>
-
 </LinearLayout>

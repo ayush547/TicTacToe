@@ -8,11 +8,11 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Select AI Difficulty Level"
-        android:textSize="32dp"
-        android:layout_centerHorizontal="true"
         android:layout_above="@id/radio"
-        android:layout_marginBottom="64dp"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="64dp"
+        android:text="Select AI Difficulty Level"
+        android:textSize="32dp" />
 
     <RadioGroup
         android:id="@+id/radio"
@@ -22,63 +22,65 @@
         android:layout_centerHorizontal="true">
 
         <RadioButton
+            android:id="@+id/easy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Easy"
-            android:id="@+id/easy"
-            android:textSize="24sp"/>
+            android:textSize="24sp" />
 
         <RadioButton
             android:id="@+id/medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Medium"
-            android:textSize="24sp"/>
+            android:textSize="24sp" />
 
         <RadioButton
             android:id="@+id/hard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Hard"
-            android:textSize="24sp"/>
+            android:textSize="24sp" />
 
     </RadioGroup>
 
     <Button
+        android:id="@+id/save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_marginTop="48dp"
-        android:id="@+id/save"
-        android:onClick="save"/>
+        android:onClick="save"
+        android:text="Save" />
+
+    <Button
+        android:id="@+id/HOF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/save"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:onClick="bestTimes"
+        android:text="Hall Of Fame" />
+
+    <Button
+        android:id="@+id/clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/HOF"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:onClick="clearData"
+        android:text="Clear Database" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hall Of Fame"
-        android:layout_below="@id/save"
+        android:layout_below="@id/clear"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="8dp"
-        android:id="@+id/HOF"
-        android:onClick="bestTimes"/>
-     <Button
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_centerHorizontal="true"
-         android:layout_below="@id/HOF"
-         android:layout_marginTop="8dp"
-         android:text="Clear Database"
-         android:onClick="clearData"
-         android:id="@+id/clear"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Back"
-        android:layout_centerHorizontal="true"
         android:onClick="mainMenu"
-        android:layout_marginTop="8dp"
-        android:layout_below="@id/clear"/>
+        android:text="Back" />
 
 </RelativeLayout>

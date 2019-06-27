@@ -6,6 +6,13 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 public class HallOfFame extends Activity {
+    public static String convertFormat(long milliseconds) {
+        long seconds = milliseconds/1000;
+        long s = seconds % 60;
+        long m = (seconds / 60) % 60;
+        long h = (seconds / (60 * 60)) % 24;
+        return String.format("%d:%02d:%02d", h,m,s);
+    }
 
     DatabaseManager myDB;
     @Override
@@ -26,7 +33,7 @@ public class HallOfFame extends Activity {
         else {
             while (easy.moveToNext()) {
                 buffer.append("ID: " + easy.getString(0) + "\t");
-                buffer.append("Time: " + easy.getString(1) + "\n");
+                buffer.append("Time: " + convertFormat(Long.parseLong(easy.getString(1))) + "\n");
             }
             easyText.setText(buffer);
         }
@@ -35,7 +42,7 @@ public class HallOfFame extends Activity {
         else {
             while (medium.moveToNext()) {
                 buffer.append("ID: " + medium.getString(0) + "\t");
-                buffer.append("Time: " + medium.getString(1) + "\n");
+                buffer.append("Time: " + convertFormat(Long.parseLong(medium.getString(1))) + "\n");
             }
             mediumText.setText(buffer);
         }
@@ -44,7 +51,7 @@ public class HallOfFame extends Activity {
         else {
             while (hard.moveToNext()) {
                 buffer.append("ID: " + hard.getString(0) + "\t");
-                buffer.append("Time: " +hard.getString(1) + "\n");
+                buffer.append("Time: " + convertFormat(Long.parseLong(hard.getString(1))) + "\n");
             }
             hardText.setText(buffer);
         }

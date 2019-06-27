@@ -14,9 +14,9 @@ public class DatabaseManager extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table easy(ID integer primary key autoincrement,Time Integer)");
-        db.execSQL("create table medium(ID integer primary key autoincrement,Time Integer)");
-        db.execSQL("create table hard(ID integer primary key autoincrement, Time Integer)");
+        db.execSQL("create table easy(ID integer primary key autoincrement,Time text)");
+        db.execSQL("create table medium(ID integer primary key autoincrement,Time text)");
+        db.execSQL("create table hard(ID integer primary key autoincrement, Time text)");
     }
 
     @Override

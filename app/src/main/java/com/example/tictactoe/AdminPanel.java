@@ -42,7 +42,7 @@ public class AdminPanel extends Activity {
         DatabaseManager myDb = new DatabaseManager(getApplication());
         myDb.clearData();
         myDb.close();
-        getApplication().deleteDatabase("BestTimes.db");
+        this.deleteDatabase("BestTimes.db");
     }
 
     public void mainMenu(View view){
