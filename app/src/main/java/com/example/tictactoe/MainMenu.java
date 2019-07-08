@@ -36,4 +36,10 @@ public class MainMenu extends Activity {
         startActivity(outToAdmin);
         finish();
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finishAndRemoveTask();
+    }
 }

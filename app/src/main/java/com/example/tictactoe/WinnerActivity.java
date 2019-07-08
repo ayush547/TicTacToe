@@ -55,4 +55,12 @@ public class WinnerActivity extends Activity {
         startActivity(outToMainMenu);
         finish();
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent outToMainMenu = new Intent(this,MainMenu.class);
+        startActivity(outToMainMenu);
+        finish();
+    }
 }
